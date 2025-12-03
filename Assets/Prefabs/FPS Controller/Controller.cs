@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using JetBrains.Annotations;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -40,7 +42,12 @@ public class Controller : MonoBehaviour
     float m_GroundedTimer;
     float m_SpeedAtJump = 0.0f;
 
-    
+
+    public void CloseGame()
+    {
+        Application.Quit();
+        Debug.Log("I Quit");
+    }
 
     void Awake()
     {
@@ -162,6 +169,8 @@ public class Controller : MonoBehaviour
             {
                 //play a sound after being in air and landing
             }
+
+           
         }
 
     }
